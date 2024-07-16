@@ -21,7 +21,7 @@ const RecipeSection = ({ recipe }) => {
         </Link>
       </div>
       <h1 className="mt-4 text-center font-bold text-xl lg:text-xl">OUR RECIPES</h1>
-      <div className='scrollbar-hide w-full mb-12 mt-4 max-h-[85vh] overflow-y-auto md:ml-2 gap-6 flex flex-wrap'>
+      <div className='scrollbar-hide w-full mb-12 mt-4 pb-5 max-h-[85vh] overflow-y-auto lg:ml-4 gap-6 flex flex-wrap'>
         <Cart recipe={recipe} />
       </div>
     </div>
