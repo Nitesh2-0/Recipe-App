@@ -8,17 +8,24 @@ body{
   overflow-x: hidden
 }
 
-
-/* Custom scrollbar hide */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
 }
 
+.flex-wrap::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+.flex-wrap::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+.flex-wrap::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 
 @tailwind base;
 @tailwind components;

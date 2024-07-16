@@ -3,10 +3,10 @@ import Home from './Home';
 import Racipes from './Racipes';
 import Feature from './Feature';
 
-const Layout = () => {
+const Layout = ({recipe}) => {
   return <>
     <Home />
-    <Racipes />
+    <Racipes recipe={recipe} />
     <Feature />
   </>
 }
