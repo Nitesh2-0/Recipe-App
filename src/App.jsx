@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import Nav from './components/Nav'
-import { Route, Routes} from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import MenuContent from './components/MenuContent'
 import Layout from './components/Layout'
 import Footer from './components/Footer'
 import RecipeSection from './components/RecipeSection'
 import Create from './components/Create'
 import Details from './components/Details'
+import About from './components/About'
+import Contact from './components/Contact'
 
 const App = () => {
   const [recipe, setRecipe] = useState([
@@ -65,7 +67,9 @@ const App = () => {
       <Route path='/' element={<Layout recipe={recipe} />} />
       <Route path='/recipes' element={<RecipeSection recipe={recipe} setRecipe={setRecipe} />} />
       <Route path='/create-recipe' element={<Create />} />
-      <Route path='/recipe-details/:id' element={<Details recipe={recipe} setRecipe= {setRecipe} />} />
+      <Route path='/recipe-details/:id' element={<Details recipe={recipe} setRecipe={setRecipe} />} />
+      <Route path='/about' element={<About />} />
+      <Route path='/contact' element={<Contact />} />
     </Routes>
     <MenuContent />
     <Footer />
