@@ -36,7 +36,7 @@ const Cart = ({ recipe }) => {
             </div>
           </div>
         </Link>
-      )) : <h1 className='text-center font-semibold text-green-500 text-2xl mb-2'>No recipes found</h1>}
+      )) : <h1 className='text-center w-full font-bold text-green-600 text-2xl mb-2'>{"No recipes found".toUpperCase()}</h1>}
     </>
   )
 }

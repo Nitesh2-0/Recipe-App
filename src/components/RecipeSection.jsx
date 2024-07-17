@@ -9,7 +9,7 @@ const RecipeSection = ({ recipe }) => {
     <div className="w-full overflow-x-hidden max-h-screen px-5 lg:px-16">
       <div className="w-full mt-8 flex justify-between items-center">
         <i
-          onClick={() => navigate(-1)}
+          onClick={() => navigate('/')}
           className="ri-arrow-left-line text-xl py-3 px-4 hover:bg-green-400 duration-300 cursor-pointer rounded-full bg-green-200"
         ></i>
         <Link
@@ -21,7 +21,7 @@ const RecipeSection = ({ recipe }) => {
         </Link>
       </div>
       <h1 className="mt-4 text-center font-bold text-xl lg:text-xl">OUR RECIPES</h1>
-      <div className='scrollbar-hide w-full mb-12 mt-4 pb-5 max-h-[85vh] overflow-y-auto lg:ml-4 gap-6 flex flex-wrap'>
+      <div className='scrollbar-hide w-full mb-12 mt-8 pb-5 max-h-[85vh] overflow-y-auto lg:ml-4 gap-6 flex flex-wrap'>
         <Cart recipe={recipe} />
       </div>
     </div>

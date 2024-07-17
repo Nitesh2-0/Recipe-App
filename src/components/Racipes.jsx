@@ -3,7 +3,7 @@ import Cart from './Cart';
 
 const Recipes = ({ recipe }) => {
   return (
-    <div className='w-screen h-[90vh] px-7 mt-12 lg:mt-0 lg:px-20'>
+    <div className='w-screen max-h-[90vh] px-7 mt-12 lg:mt-0 lg:px-20'>
       <h1 className='text-center font-semibold text-2xl mb-2'>OUR RECIPES</h1>
       <p className='text-center text-zinc-500 mb-8'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia minus hic magni accusamus dolorem iure?
