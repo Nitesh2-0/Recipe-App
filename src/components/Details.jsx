@@ -9,7 +9,7 @@ const Details = ({ recipe, setRecipe }) => {
   const singleRecipe = recipe.find(item => item.id == id);
 
   const deleteHandler = (id) => {
-    const newrecipe = recipe.filter( item => item.id != id);
+    const newrecipe = recipe.filter(item => item.id != id);
     setRecipe(newrecipe);
     navigate('/recipes')
     toast.success("Recipe Deleted Successfully!");
@@ -55,7 +55,7 @@ const Details = ({ recipe, setRecipe }) => {
         </div>
         <hr className='my-5' />
         <div className='w-full flex justify-between'>
-          <Link className='border duration-300 hover:bg-indigo-200 border-indigo-500 px-8 py-2 rounded' to='#'>
+          <Link to={`/racipes/update/${singleRecipe.id}`} className='border duration-300 hover:bg-indigo-200 border-indigo-500 px-8 py-2 rounded'>
             <i className="ri-edit-box-line text-indigo-600"></i> Update
           </Link>
           <button onClick={() => deleteHandler(singleRecipe.id)} className='border duration-300 hover:bg-red-200 border-red-500 px-8 py-2 rounded'>

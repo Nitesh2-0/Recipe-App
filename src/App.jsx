@@ -9,6 +9,7 @@ import Create from './components/Create'
 import Details from './components/Details'
 import About from './components/About'
 import Contact from './components/Contact'
+import Update from './components/Update'
 
 const App = () => {
   const [recipe, setRecipe] = useState([
@@ -70,6 +71,7 @@ const App = () => {
       <Route path='/recipe-details/:id' element={<Details recipe={recipe} setRecipe={setRecipe} />} />
       <Route path='/about' element={<About />} />
       <Route path='/contact' element={<Contact />} />
+      <Route path='/racipes/update/:id' element={<Update recipe={recipe} />} />
     </Routes>
     <MenuContent />
     <Footer />
