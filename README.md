@@ -1,6 +1,6 @@
 # Recipe-App
-This is a React Application call recipe-app.
-
+This is a React Application call recipe-app. in this i used localstorage.
+ 
 # Feature
 - Create recipe
 - Delete recipe
@@ -19,6 +19,7 @@ This is a React Application call recipe-app.
 ```Reactjs
 npm install
 ```
+
 
 
 
