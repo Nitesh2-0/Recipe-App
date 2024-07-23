@@ -1,28 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Update = ({ recipe = [] }) => {
   const [img, setImg] = useState('');
   const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
   const [ingredients, setIngredients] = useState('');
   const [instructions, setInstructions] = useState('');
 
   const { id } = useParams();
-  console.log(recipe);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const item = recipe.find((re) => re.id == id);
     if (item) {
       setImg(item.img || '');
       setTitle(item.name || '');
-      setDescription(item.steps || '');
       // setIngredients((item.name || []).join(', '));
       // setInstructions((item.steps || []).join(', '));
     } else {
       console.log('Recipe not found');
     }
-  }, [id, recipe]);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,11 +30,9 @@ const Update = ({ recipe = [] }) => {
       img,
       title,
       description,
-      ingredients: ingredients.split(',').map((ingredient) => ingredient.trim()),
-      instructions: instructions.split(',').map((instruction) => instruction.trim()),
     };
-    console.log('Updated Recipe:', updatedRecipe);
-
+    toast.success('Details updated successfully.')
+    navigate(-1)
   };
 
   return (
@@ -59,12 +56,6 @@ const Update = ({ recipe = [] }) => {
         placeholder="Recipe Name"
       />
       <textarea
-        onChange={(e) => setDescription(e.target.value)}
-        value={description}
-        className="w-full border rounded-md px-6 py-3 text-lg mb-5"
-        placeholder="Recipe Description..."
-      ></textarea>
-      {/* <textarea
         onChange={(e) => setIngredients(e.target.value)}
         value={ingredients}
         className="w-full border rounded-md px-6 py-3 text-lg mb-5"
@@ -75,7 +66,7 @@ const Update = ({ recipe = [] }) => {
         value={instructions}
         className="w-full border rounded-md px-6 py-3 text-lg mb-5"
         placeholder="Recipe Instructions (use comma to separate instructions)..."
-      ></textarea> */}
+      ></textarea>
       <div className="w-full text-right">
         <button className="rounded-md text-xl bg-green-600 text-white py-2 px-5 hover:bg-green-700 duration-200">
           Publish Recipe &nbsp; &#8594;
